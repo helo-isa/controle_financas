@@ -1,3 +1,7 @@
 from flask import Blueprint, render_template
 
-home_route = Blueprint("home", __name__)
+despesas_route = Blueprint("despesas", __name__)
+
+@despesas_route.route('/')
+def despesas():
+    return render_template('despesas.html')
