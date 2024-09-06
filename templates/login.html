@@ -12,17 +12,22 @@
     <div class="all">
         <div class="left">
             <h1 style="color: white;">BEM-VINDO!</h1>
-            <div class="logo"></div>
-            <button class="white_base_button" onclick="">Login</button>
-        </div>
-        <div class="right">
-            <h1 class="title">Crie uma conta</h1>
-            <div class="inputs">
+            <div class="inputs" id="lfi">
                 <input type="text" class="base_input" placeholder="Usuário" name="usuario">
                 <input type="password" class="base_input" placeholder="Senha" name="senha">
             </div>
+            <div class="logo logoleft"></div>
+            <button class="white_base_button" onclick="loginb()">Login</button>
+        </div>
+        <div class="right">
+            <h1 class="title">Crie uma conta</h1>
+            <div class="inputs" id="rgi">
+                <input type="text" class="base_input" placeholder="Usuário" name="usuario">
+                <input type="password" class="base_input" placeholder="Senha" name="senha">
+            </div>
+            <div class="logo logoright"></div>
             <div class="box-cad">
-                <button class="green_base_button">Cadastrar</button>
+                <button class="green_base_button" onclick="cadb()">Cadastrar</button>
                 <p>Já possui uma conta? Faça login</p>
             </div>
         </div>

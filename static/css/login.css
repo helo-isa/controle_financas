@@ -21,9 +21,15 @@
 }
 
 .logo{
+    display: block;
     background-color: white;
     width: 5em;
     height: 5em;
+}
+
+.logoright{
+    display: none;
+    background-color: var(--base-green);
 }
 
 .white_base_button{
@@ -59,21 +65,54 @@
     color: var(--base-green);
 }
 
-
-.title{
+.left h1{
     color: var(--base-green);
-    /* text */
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.left h1.fade-out {
+    opacity: 0;
+}
+
+.left h1.fade-in {
+    opacity: 1;
+}
+
+.title {
+    color: var(--base-green);
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.title.fade-out {
+    opacity: 0;
+}
+
+.title.fade-in {
+    opacity: 1;
 }
 .right{
     width: 60%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 6.5vh;
+    /* margin-top: 6.5vh; */
+    /* animation-name: right_retract; 
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count: initial; */
+}
+#lfi{
+    display: none;
+    transition: ease-in-out;
 }
 
+#lfi .base_input{
+    background-color: white;
+}
 .inputs{
     height: 9.5em;
     display: flex;
@@ -108,4 +147,95 @@
     align-items: center;
 }
 
+.left_expand{
+    width: 60%;
+    animation-name: left_expand; 
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out;
+}
 
+
+@keyframes left_expand {
+    from{
+        width: 40%;
+    }
+    to{
+        width: 60%;
+    }
+
+}
+
+.left_retract {
+    width: 40%;
+    animation-name: left_retract; 
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes left_retract {
+    from {
+        width: 60%;
+    }
+    to {
+        width: 40%;
+    }
+}
+
+.right_retract{
+    width: 40%;
+    animation-name: right_retract; 
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes right_retract {
+    from{
+        width: 60%;
+    }
+    to{
+        width: 40%;
+    }
+
+}
+
+.right_expand {
+    width: 60%;
+    animation-name: right_expand; 
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes right_expand {
+    from {
+        width: 40%;
+    }
+    to {
+        width: 60%;
+    }
+}
+
+.show {
+    display: flex !important; 
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1; 
+    }
+}
+
+.disappear {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0; 
+    }
+}
