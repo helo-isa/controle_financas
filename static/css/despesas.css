@@ -1,0 +1,68 @@
+*{
+    overflow-x: hidden;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45b08c;
+    height: 16em;
+    width: 100%;
+    overflow-y: hidden;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    width: 5.3em;
+}
+.divimglogo{
+    margin-left: auto;
+    margin-right: auto;
+}
+#imglogo{
+    width: 5.2em;
+    height:5em;
+    margin-top: 2em;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2em;
+}
+#imgperfil{
+    width: 4em;
+    height: 4em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+#imgadicionar{
+    width: 4em;
+    height: 4em;
+    margin-bottom: 2em;
+
+}
+.valor{
+    height: 10em;
+    width: 26em;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #45b08c;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    background-color: #efeeee;
+}
+h2{
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 2em;
+}
+#imgolho{
+    width: 3em;
+    height: 2.8em;
+}

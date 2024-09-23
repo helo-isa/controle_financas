@@ -1,0 +1,52 @@
+*{
+    overflow-x: hidden;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45b08c;
+    height: 12em;
+    width: 100%;
+    overflow-y: hidden;
+}
+#imglogo{
+    width: 11em;
+    height:11em;
+    margin-left: 37em;
+    margin-top: 2em;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+}
+#imgperfil{
+    width: 10em;
+    height: 10em;
+    margin-top: 2em;
+}
+.valor{
+    height: 10em;
+    width: 26em;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #45b08c;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    background-color: #efeeee;
+}
+h2{
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 2em;
+}
+#imgolho{
+    width: 3em;
+    height: 2.8em;
+}
