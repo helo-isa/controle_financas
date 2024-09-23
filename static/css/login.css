@@ -21,16 +21,27 @@
 }
 
 .logo{
-    display: block;
-    background-color: white;
+    display: flex;
+    /* background-color: white; */
     width: 5em;
     height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    height: 6em;
 }
 
 .logoright{
     display: none;
-    background-color: var(--base-green);
+    /* background-color: var(--base-green); */
+    /* color-scheme: var(--base-green); */
 }
+
+/* .logoright img{
+    width: 5em;
+} */
 
 .white_base_button{
     width: 10em;
