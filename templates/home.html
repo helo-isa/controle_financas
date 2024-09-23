@@ -1,38 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="../static/css/home.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img id="imglogo" src="../static/images/logo.png" alt="">
-        </div>
-        <div class="perfil">
-            <img id="imgperfil" src="../static/images/perfil.png" alt="">
-        </div>
-    </header>
-    <div class="valor">
-        <div class="divimgolho"><img id="imgolho" src="../static/images/olho.png" alt=""></div>
-        <div class="divvalortotal"><h2>R$ 12.596</h2></div>
-        
+
+{% extends 'header.html' %}
+{% block conteudo %} 
+<div class="cards">
+    <div class="cardganhos">
+        <img id="imgganhos" src="../static/images/moeda.png" alt="">
+        <p>Ganhos</p>
     </div>
-    <div class="cards">
-        <div class="cardganhos">
-            <img id="imgganhos" src="../static/images/moeda.png" alt="">
-            <p>Ganhos</p>
-        </div>
-        <div class="carddespesas">
-            <img id="imgdespesas" src="../static/images/cartao.png" alt="">
-            <p>Despesas</p>
-        </div>
-        <div class="cardmoedas">
-            <img id="imgmoedas" src="../static/images/config.png" alt="">
-            <p>Moedas</p>
-        </div>
+    <div class="carddespesas">
+        <img id="imgdespesas" src="../static/images/cartao.png" alt="">
+        <p>Despesas</p>
     </div>
-</body>
-</html>
+    <div class="cardmoedas">
+        <img id="imgmoedas" src="../static/images/config.png" alt="">
+        <p>Moedas</p>
+    </div>
+</div>
+{% endblock %}

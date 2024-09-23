@@ -1,0 +1,102 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45b08c;
+    height: 15em;
+    width: 100%;
+    /* overflow-y: hidden; */
+}
+
+header .space{
+    width: 7%;
+}
+#imglogo{
+    width: 8em;
+    /* margin-left: 37em; */
+    /* margin-top: 2em; */
+}
+
+.perfil {
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-right: 2%;
+    justify-content: space-evenly;
+}
+.perfil img{
+    width: 4em;
+    /* margin-top: 2em; */
+}
+
+.perfil .user{
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.perfil .user:hover{
+    /* box-shadow: 2px 2px 5px  rgb(0, 0, 0); */
+    transform:scale(1.2) ;
+}
+
+.perfil .add{
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.perfil .add:hover{
+    /* box-shadow: 2px 2px 5px  rgb(0, 0, 0); */
+    transform:scale(1.2) ;
+}
+.valor-conteiner{
+    height: 10em;
+    width: 26em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #45b08c;  
+    margin-top: -3em;
+    border-radius: 10px;
+    z-index: 100;
+    background-color: #efeeee;
+}
+
+.valor{
+    height: 10em;
+    width: 20em;
+    display: flex;
+    /* flex-direction: row; */
+
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+    align-items: center;
+    justify-content: space-evenly ;
+    /* padding-left: 5%; */
+}
+h2{
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    /* margin-left: 5%; */
+    /* margin-top: 2em; */
+}
+
+.divolho{
+    border-radius: 50%;
+    /* background-color: white; */
+    width: 3em;
+    height: 3em;
+    transition: 0.3s;
+
+}
+
+.divolho:hover{
+    background-color: #cacaca;
+}
+
+
+#imgolho{
+    width: 3em;
+    height: 2.8em;
+}

@@ -12,13 +12,16 @@
     <div class="all">
         <div class="left">
             <h1 style="color: white;">BEM-VINDO!</h1>
-            <div class="inputs" id="lfi">
-                <input type="text" class="base_input" placeholder="Usuário" name="usuario">
-                <input type="password" class="base_input" placeholder="Senha" name="senha">
-            </div>
-            <div class="logo logoleft"><img src="../static/images/cifrao.png" alt=""></div>
+            <form action="/autenticar" method="get">
+                <div class="inputs" id="lfi">
+                    <input type="text" class="base_input" placeholder="Usuário" name="usuario">
+                    <input type="password" class="base_input" placeholder="Senha" name="passw">
+                </div>
             
-            <button class="white_base_button" onclick="loginb()">Login</button>
+                <div class="logo logoleft"><img src="../static/images/cifrao.png" alt=""></div>
+            
+                <button class="white_base_button" onclick="loginb()" type="submit">Login</button>
+            </form>
         </div>
         <div class="right">
             <h1 class="title">Crie uma conta</h1>
