@@ -1,0 +1,128 @@
+*{
+    overflow-x: hidden;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45b08c;
+    height: 12em;
+    width: 100%;
+    overflow-y: hidden;
+}
+#imglogo{
+    width: 11em;
+    height:11em;
+    margin-left: 37em;
+    margin-top: 2em;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+}
+#imgperfil{
+    width: 10em;
+    height: 10em;
+    margin-top: 2em;
+}
+.valor{
+    height: 10em;
+    width: 26em;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #45b08c;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    background-color: #efeeee;
+}
+h2{
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 2em;
+}
+#imgolho{
+    width: 3em;
+    height: 2.8em;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
+    align-items: center;
+    justify-content: center;
+
+}
+.cardganhos{
+    width: 14em;
+    height: 12em;
+    background-color: #45b08c;
+    margin-right: 2em;
+    border-radius: 10px;
+    transition: transform .25s 
+    ease-out;
+}
+.cardganhos:hover{
+    transform: scale(0.9) rotate(0deg);
+    cursor: pointer;
+}
+#imgganhos{
+    width: 5em;
+    height: 5em;
+    margin-left: 4.5em;
+    margin-top: 2em;
+    margin-bottom: 2.8em;
+}
+.carddespesas{
+    width: 14em;
+    height: 12em;
+    background-color: #45b08c;
+    margin-right: 2em;
+    border-radius: 10px;
+    transition: transform .25s 
+    ease-out;
+}
+.carddespesas:hover{
+    transform: scale(0.9) rotate(0deg);
+    cursor: pointer;
+}
+#imgdespesas{
+    width: 5em;
+    height: 5em;
+    margin-left: 4.5em;
+    margin-top: 2em;
+    margin-bottom: 2.8em;
+}
+.cardmoedas{
+    width: 14em;
+    height: 12em;
+    background-color: #45b08c;
+    border-radius: 10px;
+    transition: transform .25s 
+    ease-out;
+}
+.cardmoedas:hover{
+    transform: scale(0.9) rotate(0deg);
+    cursor: pointer;
+}
+#imgmoedas{
+    width: 5em;
+    height: 5em;
+    margin-left: 4.5em;
+    margin-top: 2em;
+    margin-bottom: 2.8em;
+}
+p{
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+
+
