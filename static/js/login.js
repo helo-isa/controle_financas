@@ -81,6 +81,7 @@ function cadb() {
     const right = document.getElementsByClassName("right")[0];
     const leftTitle = document.querySelector(".left h1");
     const rightTitle = document.querySelector(".title");
+    const formRight = document.querySelector("#form-right");
     leftTitle.classList.remove("fade-in");
     rightTitle.classList.remove("fade-in");
     console.log(left.classList.contains("left_expand"));  
@@ -125,7 +126,7 @@ function cadb() {
             rightTitle.classList.add("fade-in");
         }, 1000);
     } else {
-        console.log("cadastro");
+        formRight.submit();
     }
 }
 

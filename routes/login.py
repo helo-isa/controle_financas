@@ -28,7 +28,7 @@ def autenticar():
 
 @login_route.route('/new', methods=['GET'])
 def register():
-    pass
+    return render_template('home.html', saldo=saldo)
 
 @login_route.route('/dados', methods=['GET'])
 def obter_dados():
