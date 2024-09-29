@@ -1,0 +1,10 @@
+<div class="despesa">
+    <h2>{{ 'R$-{:.2f}'.format(d.value) }}</h2>
+    <div class="dsection">
+        <div class="dtext">
+            <p>Data: {{d.date}}</p>
+            <p>Categoria: {{d.class}}</p>
+        </div>
+        <button class="delete" c-delete="{{url_for('despesas.deletardespesas', despesa_id=d.id)}}" c-remove-closest=".despesa"><img src="../static/images/delete.png" alt=""></button>
+    </div>
+</div>

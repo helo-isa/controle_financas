@@ -2,14 +2,18 @@
 {% extends 'header.html' %}
 {% block conteudo %} 
 <div class="cards">
-    <div class="cardganhos">
-        <img id="imgganhos" src="../static/images/moeda.png" alt="">
-        <p>Ganhos</p>
-    </div>
-    <div class="carddespesas">
-        <img id="imgdespesas" src="../static/images/cartao.png" alt="">
-        <p>Despesas</p>
-    </div>
+    <a href="{{ url_for('ganhos.listarganhos') }}" type="block" style="text-decoration: none;">
+        <div class="cardganhos">
+            <img id="imgganhos" src="../static/images/moeda.png" alt="">
+            <p>Ganhos</p>
+        </div>
+    </a>
+    <a href="{{ url_for('despesas.listardespesas') }}" type="block" style="text-decoration: none;">
+        <div class="carddespesas">
+            <img id="imgdespesas" src="../static/images/cartao.png" alt="">
+            <p>Despesas</p>
+        </div>
+    </a>
     <div class="cardmoedas">
         <img id="imgmoedas" src="../static/images/config.png" alt="">
         <p>Moedas</p>

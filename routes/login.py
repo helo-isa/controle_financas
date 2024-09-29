@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, render_template, request, redirect, url_for, session
-from database.db import users
+from database.db import users, saldo
 
 login_route = Blueprint("login", __name__)
 
@@ -18,7 +18,7 @@ def autenticar():
     print(usuario, users)
     if usuario in users:
         if users[usuario] == passw:
-            return render_template('home.html')
+            return render_template('home.html', saldo=saldo)
         else:
             session['error'] = "Senha incorreta. Tente novamente."
     else:

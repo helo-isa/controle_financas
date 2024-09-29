@@ -11,6 +11,15 @@ header {
 header .space{
     width: 7%;
 }
+
+header .logo{
+    transition: 0.5s;
+}
+
+header .logo:hover{
+    transform: scale(1.1);
+}
+
 #imglogo{
     width: 8em;
     /* margin-left: 37em; */
@@ -42,6 +51,7 @@ header .space{
 .perfil .add{
     border-radius: 50%;
     transition: 0.5s;
+    display: none;
 }
 .perfil .add:hover{
     /* box-shadow: 2px 2px 5px  rgb(0, 0, 0); */
@@ -99,4 +109,22 @@ h2{
 #imgolho{
     width: 3em;
     height: 2.8em;
+}
+
+::-webkit-scrollbar {
+    width: 16px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background-color:#45b08c; /* Cor do fundo da barra */
+}
+
+::-webkit-scrollbar-thumb {
+     /* Cor da barra */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+    border: 2px solid white; /* Cor ao passar o mouse */
 }

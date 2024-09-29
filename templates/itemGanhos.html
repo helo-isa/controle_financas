@@ -1,0 +1,10 @@
+<div class="ganho">
+    <h2>{{ 'R${:.2f}'.format(g.value) }}</h2>
+    <div class="gsection">
+        <div class="gtext">
+            <p>Data: {{g.date}}</p>
+            <p>Categoria: {{g.class}}</p>
+        </div>
+        <button class="delete" c-delete="{{url_for('ganhos.deletarGanhos', ganho_id=g.id)}}" c-remove-closest=".ganho"><img src="../static/images/delete.png" alt=""></button>
+    </div>
+</div>

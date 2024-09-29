@@ -7,3 +7,12 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --base-green: #45b08c;
+    --base-gray: #d9d9d9;
+    --input-height: 3.5em;
+    --input-padding: 1em;
+    --input-font-size: 1.2em;
+}
+

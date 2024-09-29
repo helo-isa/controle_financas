@@ -2,7 +2,78 @@
 {% extends 'header.html' %}
 {% block conteudo %} 
 
+<div class="grid">
+    {% for d in despesas %}
+        {% include 'itemDespesas.html' %}
+    {% endfor %}
+</div>
 
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+        <h2>NOVAS DESPESAS</h2>
+        <p>Cadastre suas Despesas</p>
+        <form class="c-form" action="{{url_for('despesas.inserirdespesas')}}" method="post">
+            <input type="number" min="0" step="0.01" id="valor" name="valor" placeholder="Digite o valor">
 
+            <input type="text" id="categoria" name="categoria" placeholder="Digite a categoria">
 
+            <input type="date" id="data" name="data">
+            
+            <button type="button" class="caddespesas">Cadastrar</button>
+        </form>
+        <button class="close-popup-btn" onclick="closePopup()">Fechar</button>
+    </div>
+</div>
+<div id="snackbar" class="snackbar"></div>
+
+<script src="../static/cru.js"></script>
+<script>
+    const add = document.querySelector(".add");
+    add.style.display = "block";
+    const caddespesas = document.querySelector(".caddespesas");
+
+    add.addEventListener("click", function (){
+        openPopup();
+    });
+    caddespesas.addEventListener("click", function (){
+        console.log("clique")
+        verifydespesas();
+    });
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+
+    }
+    function showSnackbar(message) {
+    const snackbar = document.getElementById("snackbar");
+    snackbar.innerText = message;
+    snackbar.className = "snackbar show";
+    document.getElementById("valor").focus();
+    setTimeout(() => {
+        snackbar.className = snackbar.className.replace("show", "");
+    }, 4000);
+
+   
+    
+}
+
+    function verifydespesas() {
+        let form = document.querySelector("form")
+        let valor = parseFloat(document.getElementById("valor").value);
+        let categoria = document.getElementById("categoria").value;
+        let data = document.getElementById("data").value;
+        console.log("Valor:", valor);
+        console.log("Categoria:", categoria);
+        console.log("Data:", data);
+        if(valor && categoria && data){
+            console.log("valido");
+            form.submit();
+        } else {
+            showSnackbar("Preencha todos os campos");
+        }
+    }
+</script>
 {% endblock %}

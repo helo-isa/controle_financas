@@ -1,52 +1,189 @@
 *{
-    overflow-x: hidden;
+    padding: 0;
     margin: 0;
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #45b08c;
-    height: 12em;
+
+.grid{
+    margin-top: 5vh;
     width: 100%;
-    overflow-y: hidden;
-}
-#imglogo{
-    width: 11em;
-    height:11em;
-    margin-left: 37em;
-    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3vw;
+    /* grid-template-rows: 100px 200px;  */
+    /* justify-content: space-evenly; */
+    justify-items: center ;
 }
 
-.perfil {
+.ganho{
+    width: 25vw;
+    height: 22vh;
+    border: 2px solid #45b08c; 
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 5%; */
+    justify-content: space-between;
+}
+
+.ganho h2{
+    color: #45b08c;
+    margin-top: 4%;
+}
+
+.ganho .gsection {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 6%;
+    padding-bottom: 4%;
+}
+
+
+.ganho p{
+    text-align: start;
+    color: black;
+
+}
+
+.ganho .delete{
+    /* background-color: red; */
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+}
+
+.ganho .delete img{
+    /* background-color: red; */
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.ganho .delete img:hover{
+    transform: scale(1.1) rotate(0deg);
+    cursor: pointer;
+}
+
+.open-popup-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #39b789;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup-container {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.popup-content {
+    background-color: #d9d9d9;
+    padding: 20px;
+    border-radius: 10px;
+    height: 50vh;
+    width: 30vw;
+    text-align: center;
     display: flex;
     align-items: center;
-    margin-right: 2em;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
-#imgperfil{
-    width: 10em;
-    height: 10em;
-    margin-top: 2em;
-}
-.valor{
-    height: 10em;
-    width: 26em;
+
+.popup-content form{
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    border: 2px solid #45b08c;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    background-color: #efeeee;
+    flex-direction: column;
+    align-items: center;
 }
-h2{
-    justify-content: center;
+.popup-content h2 {
+    color: #39b789;
+}
+.popup-content p {
+    color: black;
+}
+.popup-content input[type="number"], 
+.popup-content input[type="text"], 
+.popup-content input[type="date"] {
+    background-color: transparent;
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #39b789;
+    /* border-radius: 5px; */
+}
+
+.popup-content input:focus{
+    outline: none;
+}
+.popup-content button[type="button"],
+.popup-content button[type="submit"] {
+    background-color: #39b789;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.popup-content button[type="button"]:hover{
+    transform: scale(1.05);
+}
+
+.close-popup-btn {
+    background-color: transparent;
+    border: none;
+    color: #39b789;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 5vw;
+    height: 5vh;
+    transition: 0.5s;
+}
+
+.close-popup-btn:hover{
+    background-color: #ff0000ac;
+    color: #d9d9d9;
+}
+.snackbar {
+    visibility: hidden; /* Hidden by default. Will be shown on click */
+    min-width: 500px; /* Minimum width of the snackbar */
+    margin-left: -255px; /* Center the snackbar */
+    background-color: #45b08c; /* Background color */
+    color: #fff; /* Text color */
     text-align: center;
-    font-size: 2em;
-    margin-top: 2em;
+    justify-content: center;
+    border-radius: 60px; 
+    padding: 8px; /* Padding */
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+    font-size: 17px; 
+    transition: visibility 0s, opacity 0.5s linear; /* Transition for visibility */
+    opacity: 0; /* Hidden by default */
 }
-#imgolho{
-    width: 3em;
-    height: 2.8em;
+
+.snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    opacity: 1; /* Fade in the snackbar */
 }

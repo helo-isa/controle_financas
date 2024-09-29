@@ -1,24 +1,79 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ganhos</title>
-    <link rel="stylesheet" href="../static/css/ganhos.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img id="imglogo" src="../static/images/logo.png" alt="">
-        </div>
-        <div class="perfil">
-            <img id="imgperfil" src="../static/images/perfil.png" alt="">
-        </div>
-    </header>
-    <div class="valor">
-        <div class="divimgolho"><img id="imgolho" src="../static/images/olho.png" alt=""></div>
-        <div class="divvalortotal"><h2>R$ 12.596</h2></div>
-        
+
+{% extends 'header.html' %}
+{% block conteudo %} 
+
+<div class="grid">
+    {% for g in ganhos %}
+        {% include 'itemGanhos.html' %}
+    {% endfor %}
+</div>
+
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+        <h2>NOVOS GANHOS</h2>
+        <p>Cadastre seus ganhos</p>
+        <form class="c-form" action="{{url_for('ganhos.inserirganhos')}}" method="post">
+            <input type="number" min="0" step="0.01" id="valor" name="valor" placeholder="Digite o valor">
+
+            <input type="text" id="categoria" name="categoria" placeholder="Digite a categoria">
+
+            <input type="date" id="data" name="data">
+            
+            <button type="button" class="cadganhos">Cadastrar</button>
+        </form>
+        <button class="close-popup-btn" onclick="closePopup()">Fechar</button>
     </div>
-</body>
-</html>
+</div>
+<div id="snackbar" class="snackbar"></div>
+
+<script src="../static/cru.js"></script>
+<script>
+    const add = document.querySelector(".add");
+    add.style.display = "block";
+    const cadganhos = document.querySelector(".cadganhos");
+
+    add.addEventListener("click", function (){
+        openPopup();
+    });
+    cadganhos.addEventListener("click", function (){
+        console.log("clique")
+        verifyGanhos();
+    });
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+
+    }
+    function showSnackbar(message) {
+    const snackbar = document.getElementById("snackbar");
+    snackbar.innerText = message;
+    snackbar.className = "snackbar show";
+    document.getElementById("valor").focus();
+    setTimeout(() => {
+        snackbar.className = snackbar.className.replace("show", "");
+    }, 4000);
+
+   
+    
+}
+
+    function verifyGanhos() {
+        let form = document.querySelector("form")
+        let valor = parseFloat(document.getElementById("valor").value);
+        let categoria = document.getElementById("categoria").value;
+        let data = document.getElementById("data").value;
+        console.log("Valor:", valor);
+        console.log("Categoria:", categoria);
+        console.log("Data:", data);
+        if(valor && categoria && data){
+            console.log("valido");
+            form.submit();
+        } else {
+            showSnackbar("Preencha todos os campos");
+        }
+    }
+</script>
+{% endblock %}
