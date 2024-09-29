@@ -1,13 +1,21 @@
+var x = "cadastro"
+
+
 function loginb(){
+    // x = "login"
+    // console.log(x)
     const left = document.getElementsByClassName("left")[0];
     const right = document.getElementsByClassName("right")[0];
     const leftTitle = document.querySelector(".left h1");
     const rightTitle = document.querySelector(".title");
+    const formLeft = document.querySelector("#form-left");
+    const formData = new FormData(formLeft);
     leftTitle.classList.remove("fade-in");
     rightTitle.classList.remove("fade-in");
     console.log(left.classList.contains("left_expand"));  
 
     if(!left.classList.contains("left_expand")){
+        // formLeft.action = "{{ url_for('login.autenticar') }}"
         // colocando e removendo classes
         left.classList.remove("left_retract");
         right.classList.remove("right_expand");
@@ -41,10 +49,31 @@ function loginb(){
             rightTitle.classList.remove("fade-out");
             leftTitle.classList.add("fade-in");
             rightTitle.classList.add("fade-in");
+    
         }, 1000);
+
     } else {
-        console.log("Login");
-    }
+        document.querySelector('.base_input[name="usuariologin"]').focus(); 
+
+        fetch('/login/dados') 
+        .then(response => response.json())
+        .then(users => {
+            const formData = new FormData(document.querySelector('#form-left'));
+            const usuario = formData.get('usuariologin');
+            const senha = formData.get('passwlogin');
+            if (usuario != "" && senha != ""){
+                if (users[usuario] && users[usuario] === senha) {
+                    console.log("Login bem-sucedido");
+                    formLeft.submit();
+                } else {
+                    showSnackbar("Usuário ou senhas incorretos")
+                }
+            } else {
+                showSnackbar("Preencha todos os campos");
+            }
+        })
+        .catch(error => console.error('Erro ao obter dados:', error));
+}
 }
 
 function cadb() {
@@ -97,5 +126,21 @@ function cadb() {
         }, 1000);
     } else {
         console.log("cadastro");
+    }
+}
+
+function showSnackbar(message) {
+    const snackbar = document.getElementById("snackbar");
+    snackbar.innerText = message;
+    snackbar.className = "snackbar show";
+    
+    // Remova a snackbar após 3 segundos
+    setTimeout(() => {
+        snackbar.className = snackbar.className.replace("show", "");
+    }, 4000);
+
+    // Foca no input de usuário ao exibir um erro
+    if (message.includes("incorretos")) {
+        document.querySelector('.base_input[name="usuariologin"]').focus();
     }
 }

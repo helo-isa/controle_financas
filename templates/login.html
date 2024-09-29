@@ -11,19 +11,21 @@
 <body>
     <div class="all">
         <div class="left">
-            <h1 style="color: white;">BEM-VINDO!</h1>
-            <form action="/autenticar" method="get">
+            <form action="{{ url_for('login.autenticar') }}" id="form-left" method="GET">
+                <h1 style="color: white;">{% if error %} {{error}} {% else %} BEM-VINDO! {% endif %}</h1>
+            
                 <div class="inputs" id="lfi">
-                    <input type="text" class="base_input" placeholder="Usuário" name="usuario">
-                    <input type="password" class="base_input" placeholder="Senha" name="passw">
+                    <input accept="all" type="text" class="base_input" placeholder="Usuário" name="usuariologin">
+                    <input type="password" class="base_input" placeholder="Senha" name="passwlogin">
                 </div>
             
                 <div class="logo logoleft"><img src="../static/images/cifrao.png" alt=""></div>
             
-                <button class="white_base_button" onclick="loginb()" type="submit">Login</button>
+                <button class="white_base_button" type="button" onclick="loginb()">Login</button>
             </form>
         </div>
         <div class="right">
+            <form action="{{ url_for('login.register') }}">
             <h1 class="title">Crie uma conta</h1>
             <div class="inputs" id="rgi">
                 <input type="text" class="base_input" placeholder="Usuário" name="usuario">
@@ -32,10 +34,11 @@
             <div class="logo logoright"><img src="../static/images/cifrão2.png" alt=""></div>
             
             <div class="box-cad">
-                <button class="green_base_button" onclick="cadb()">Cadastrar</button>
+                <button class="green_base_button" onclick="cadb()" type="button">Cadastrar</button>
             </div>
+            </form>
         </div>
     </div>
-
+    <div id="snackbar" class="snackbar"></div>
 </body>
 </html>

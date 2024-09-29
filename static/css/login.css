@@ -20,11 +20,27 @@
     justify-content: space-evenly;
 }
 
+.right form{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.left form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .logo{
     display: flex;
     /* background-color: white; */
-    width: 5em;
-    height: 5em;
+    width: 10em;
+    /* height: 5em; */
     align-items: center;
     justify-content: center;
 }
@@ -130,16 +146,26 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+
 .inputs .base_input{
     width: 16em;
     height: var(--input-height);
     padding: var(--input-padding);
+    border: 2px solid #ccc;
     border-radius: 50px;
     background-color: var(--base-gray);
     border: none;
     font-size: var(--input-font-size);
     box-sizing: border-box;
+    transition: border-color 0.3s;
 
+}
+
+.base_input:focus { 
+    border-color: #4CAF50 !important; /* Cor da borda quando o input é focado */ 
+    outline: none !important; /* Remove a borda de foco padrão do navegador */ 
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5) !important; /* Sombra sutil */ 
 }
 
 .inputs .base_input::placeholder {
@@ -249,4 +275,28 @@
     to {
         opacity: 0; 
     }
+}
+
+.snackbar {
+    visibility: hidden; /* Hidden by default. Will be shown on click */
+    min-width: 500px; /* Minimum width of the snackbar */
+    margin-left: -255px; /* Center the snackbar */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    justify-content: center;
+    border-radius: 60px; 
+    padding: 8px; /* Padding */
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+    font-size: 17px; 
+    transition: visibility 0s, opacity 0.5s linear; /* Transition for visibility */
+    opacity: 0; /* Hidden by default */
+}
+
+.snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    opacity: 1; /* Fade in the snackbar */
 }
